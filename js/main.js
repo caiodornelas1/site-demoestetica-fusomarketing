@@ -65,3 +65,12 @@ servicePanels.forEach((panel) => {
     panel.classList.add('is-active');
   });
 });
+
+// Portfolio expanding gallery
+const portfolioPhotos = document.querySelectorAll('.portfolio-photo');
+portfolioPhotos.forEach((photo) => {
+  photo.addEventListener('click', () => {
+    portfolioPhotos.forEach((p) => p.classList.remove('is-active'));
+    photo.classList.add('is-active');
+  });
+});
