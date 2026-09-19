@@ -56,3 +56,12 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.15 }
 );
 document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+// Services interactive panel selector
+const servicePanels = document.querySelectorAll('.service-panel');
+servicePanels.forEach((panel) => {
+  panel.addEventListener('click', () => {
+    servicePanels.forEach((p) => p.classList.remove('is-active'));
+    panel.classList.add('is-active');
+  });
+});
