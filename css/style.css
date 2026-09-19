@@ -298,6 +298,8 @@ section { position: relative; }
   inset: 0;
   background-size: cover;
   background-position: 34% 24%;
+  transform: scale(1.18);
+  transform-origin: center;
   z-index: -2;
   filter: saturate(0.9) brightness(1) contrast(1.02);
 }
@@ -366,6 +368,7 @@ section { position: relative; }
 }
 
 .service-selector {
+  position: relative;
   display: flex;
   width: 100%;
   height: 460px;
@@ -591,6 +594,7 @@ section { position: relative; }
 }
 
 .portfolio-gallery {
+  position: relative;
   display: flex;
   align-items: stretch;
   gap: 8px;
@@ -902,6 +906,40 @@ section { position: relative; }
 .whatsapp-fab:hover { transform: scale(1.08); }
 .whatsapp-fab svg { width: 28px; height: 28px; }
 
+/* ============ CLICK HINT (floating icon) ============ */
+
+.click-hint {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 6;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--gold-500), var(--gold-300));
+  color: var(--ink-on-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+  pointer-events: none;
+}
+.click-hint svg { width: 18px; height: 18px; }
+.click-hint::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 999px;
+  border: 2px solid var(--gold-300);
+  animation: clickHintPulse 1.8s ease-out infinite;
+}
+
+@keyframes clickHintPulse {
+  0% { transform: scale(0.85); opacity: 0.8; }
+  70% { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
 /* ============ REVEAL ANIMATION ============ */
 
 .reveal {
@@ -942,7 +980,7 @@ section { position: relative; }
     align-items: stretch;
     justify-content: flex-end;
   }
-  .hero-bg { background-position: 62% 18%; }
+  .hero-bg { background-position: 62% 18%; transform: scale(1.28); }
   .hero-bg::after {
     background:
       linear-gradient(180deg, rgba(5,12,20,0.15) 0%, rgba(5,12,20,0.2) 40%, rgba(5,12,20,0.55) 68%, rgba(5,12,20,0.85) 88%, rgba(5,12,20,0.94) 100%);
