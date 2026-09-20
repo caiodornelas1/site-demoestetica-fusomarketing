@@ -664,6 +664,13 @@ section { position: relative; }
   transform: translateY(10px);
 }
 
+.portfolio-disclaimer {
+  margin: 28px 0 0;
+  text-align: center;
+  font-size: 12px;
+  color: #7F8C99;
+}
+
 /* ============ TESTIMONIALS ============ */
 
 .testimonials {
